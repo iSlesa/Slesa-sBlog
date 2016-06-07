@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+    {% block title %} Buu Blog {% endblock %}
+
+    {% block content %}
+        {% if category %}
+        <h2>{{category}}</h2>
+        {% endif %}
+        {% for post in posts %}
+        <div class="w3-card-4">
+            <h2>
+                <a href="{{post.get_absolute_url}}">
+                    {{post.title}}
+                </a>
+            </h2>
+            <div class="content">
+                {{post.content}}
+            </div>
+            <p class="date-time">
+                Posted on
+                <time datetime="{{post.created|date:"c"}}">
+                {{post.created|date}}
+                </time>
+            </p>
+        </div>
+        {% endfor %}
+    {% endblock %}

@@ -1,0 +1,36 @@
+ {% extends 'base.html' %}
+
+    {% block title %}{{post.title}}{% endblock %}
+
+    {% block content %}
+    <article>
+        <header>
+            <h1> {{post.title}} </h1>
+            {% if post.image != "" %}
+            <img src="/media/{{post.image}}" style="width:200px;">
+            {% endif %}
+            <p class='date-time'>
+                Posted on
+                <time datetime="{{post.created|date:"c"}}">
+                {{post.created|date}}
+                </time>
+            </p>
+        </header>
+        <p class="content">
+            {{post.content|safe}}
+        </p>
+        Category : <a href="{% url 'index' %}?category={{post.category}}">{{post.category}}</a>
+    </article>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'slesasblog';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    {% endblock %}
