@@ -31,6 +31,24 @@ p.date-time{
     font-size: smaller;
 }
 
+.nav-links{
+    font-size: smaller;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-links > #previous{
+    float: left;
+}
+
+.nav-links > #next{
+    float: right;
+}
+
+.nav-links > #current{
+    text-align: center;
+}
+
 a:link{
     color: inherit;
     text-decoration: none;
@@ -40,13 +58,18 @@ a:link{
     padding: 30px 30px 30px 30px;
 }
 
-.content{
+.post-title, .cat, .content{
     text-align: justify;
-    padding:0px 00px 00px 00px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.post-title{
+    margin-top: 0px;
 }
 
 img{
-    padding-left: 300px;
+    padding-left: 20px;
 }
 
 hr {
@@ -58,12 +81,20 @@ hr {
     /*border-bottom:1px solid #313030;*/
 }
 
-#post-title{
-    text-align: center;
+aside{
+
 }
 
-aside{
-    border-style: solid;
-    border-right: thick double #ff0000;
-    outline-style: dotted;
+#side-bar{
+    border-right: 1px solid #ccccff;
+}
+
+.equal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal > div[class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }

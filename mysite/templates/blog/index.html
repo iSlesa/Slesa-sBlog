@@ -8,25 +8,37 @@
         <h2>{{category}}</h2>
         {% endif %}
         {% for post in posts %}
-        <div class="">
-                <h2>
-                    <a href="{{post.get_absolute_url}}" id="post-title">
-                        {{post.title}}
-                    </a>
-                </h2>
-                <div class="content">
-                    {{post.content | truncatewords_html:50 | safe}}
-                </div>
-
+        <div>
+            <h2>
+                <a href="{{post.get_absolute_url}}"  class="post-title">
+                    {{post.title}}
+                </a>
+            </h2>
+            <div class="content">
+                {{post.content | truncatewords_html:50 | safe}}
+            </div>
             <p class="date-time">
-            <a href="{{post.get_absolute_url}}">
                 Posted on
                 <time datetime="{{post.created|date:"c"}}">
                 {{post.created|date}}
                 </time>
-            </a>
             </p>
             <hr/>
         </div>
         {% endfor %}
+        <div class="paginator row">
+            <div class="nav-links col-md-4" id="previous">
+                {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}">previous</a>
+                {% endif %}
+            </div>
+            <div class="nav-links col-md-4" id="current">
+                page {{posts.number}} of {{posts.paginator.num_pages}}
+            </div>
+            <div class="nav-links col-md-4" id="next">
+                {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}">next</a>
+                {% endif %}
+            </div>
+        </div>
     {% endblock %}
