@@ -10,21 +10,25 @@
     font-size: 45pt;
     background-color: #1D276B;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 0px 0px 0px 0px;
 }
 
 body {
     /*background-image: url('/media/images/flash.jpg');*/
     /*background-color: #1D276B;*/
     background-color: white;
-    text-align: center;
-    font-family: 'Alef', sans-serif;
+    text-align: justify;
+    line-height: 36px;
+    font-family: 'Alegreya', sans-serif;
     color: #1D276B;
     font-size: 12pt;
 }
 
 p.date-time{
-    color: #1D276B;
+    color: #389CCD;
+    float: right;
+    padding-right: 00px;
+    font-size: smaller;
 }
 
 a:link{
@@ -38,8 +42,28 @@ a:link{
 
 .content{
     text-align: justify;
-    padding: 30px 30px 30px 30px;
+    padding:0px 00px 00px 00px;
 }
-.w3-card-4{
-    padding: 30px 30px 30px 30px;
+
+img{
+    padding-left: 300px;
+}
+
+hr {
+    color: #eeeeee;
+    background-color: #ccccff;
+    height: 1px;
+    border: none;
+    padding-left: 00px;
+    /*border-bottom:1px solid #313030;*/
+}
+
+#post-title{
+    text-align: center;
+}
+
+aside{
+    border-style: solid;
+    border-right: thick double #ff0000;
+    outline-style: dotted;
 }

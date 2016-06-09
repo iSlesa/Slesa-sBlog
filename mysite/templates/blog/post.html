@@ -6,21 +6,23 @@
     <article>
         <header>
             <h1> {{post.title}} </h1>
-            {% if post.image != "" %}
-            <img src="/media/{{post.image}}" style="width:200px;">
-            {% endif %}
-            <p class='date-time'>
+                <p class='date-time'>
                 Posted on
-                <time datetime="{{post.created|date:"c"}}">
-                {{post.created|date}}
-                </time>
-            </p>
+                    <time datetime="{{post.created|date:"c"}}">
+                    {{post.created|date}}
+                    </time>
+                </p>
         </header>
+            {% if post.image != "" %}
+            <img src="/media/{{post.image}}" style="width:800px;">
+            {% endif %}
         <p class="content">
             {{post.content|safe}}
         </p>
         Category : <a href="{% url 'index' %}?category={{post.category}}">{{post.category}}</a>
     </article>
+
+    /* Disqus Comment System */
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
